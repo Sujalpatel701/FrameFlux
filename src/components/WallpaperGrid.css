@@ -1,0 +1,45 @@
+.wallpaper-grid-container {
+  position: relative; /* just in case */
+  padding-bottom: 10px; /* add enough space for the fixed button */
+}
+
+.wallpaper-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+  gap: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .wallpaper-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .wallpaper-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add Wallpaper Button styles */
+.add-wallpaper-btn {
+  position: fixed; /* fix to viewport */
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  font-size: 32px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+}

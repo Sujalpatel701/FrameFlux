@@ -1,0 +1,52 @@
+.footer {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 14px;
+  flex-shrink: 0; 
+  margin-top: 10px;/* Prevent shrinking */
+
+  /* Add rounded top corners */
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
+
+  /* Optional: remove border-top if not needed */
+  /* border-top: 1px solid var(--border-color); */
+
+  /* Optional: shadow for depth */
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer links */
+.footer-links a {
+  color: var(--text-primary);
+  margin-left: 16px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--button-hover-bg);
+}
+
+/* Responsive - stack footer items vertically on small screens */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  .footer-links {
+    margin-top: 8px;
+  }
+  .footer-links a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+}

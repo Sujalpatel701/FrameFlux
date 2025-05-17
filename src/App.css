@@ -1,0 +1,14 @@
+/* App.css */
+
+/* Ensure html and body fill the full viewport */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default scrollbars for horizontal wallpaper scrolls if needed */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Optional: hide scrollbar background */
+}

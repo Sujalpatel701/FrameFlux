@@ -1,0 +1,159 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, #00ffe0, #ff1eb1, #00ffe0);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Improved hover animation */
+.logo:hover {
+  transform: scale(1.05);
+  text-shadow:
+    0 0 6px rgba(255, 255, 255, 0.3),
+    0 0 12px rgba(255, 255, 255, 0.4),
+    0 0 20px rgba(255, 255, 255, 0.2);
+  background-size: 300% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.user-btn {
+  font-size: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--button-bg);
+}
+
+.header-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;             /* slightly less gap */
+  width: 100%;
+  max-width: 900px;
+}
+
+.wallpaper-types {
+  display: flex;
+  gap: 10px;             /* smaller gap */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.wallpaper-types button {
+  padding: 6px 12px;     /* smaller padding */
+  font-size: 13px;       /* smaller font */
+  border-radius: 6px;    /* slightly smaller radius */
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.wallpaper-types button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;             /* smaller gap */
+}
+
+.actions button {
+  padding: 6px 12px;     /* smaller padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.user-btn {
+  font-size: 18px;       /* slightly smaller */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;           /* smaller circle */
+  height: 36px;
+  background-color: var(--button-bg);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.user-btn:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+  .header-controls {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

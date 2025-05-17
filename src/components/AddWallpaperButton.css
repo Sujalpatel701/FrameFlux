@@ -1,0 +1,41 @@
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 1);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(255, 165, 0, 0.6);
+  }
+}
+
+.add-wallpaper-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+
+  /* Animation */
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+/* Hover effect */
+.add-wallpaper-btn:hover {
+  background-color: #ffa500; /* bright orange */
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 165, 0, 1);
+}
