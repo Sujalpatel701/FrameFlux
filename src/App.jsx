@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import User from './pages/User';  // import your User page
 import './App.css';
 
 function App() {
@@ -19,7 +21,13 @@ function App() {
 
   return (
     <div className={`home ${darkMode ? 'dark' : 'light'}`}>
-      <Home toggleTheme={toggleTheme} darkMode={darkMode} />
+      <Routes>
+        <Route
+          path="/FrameFlux/"
+          element={<Home toggleTheme={toggleTheme} darkMode={darkMode} />}
+        />
+        <Route path="/FrameFlux/user" element={<User />} />
+      </Routes>
     </div>
   );
 }
