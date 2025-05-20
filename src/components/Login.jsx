@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
+import './Login.css'; // 👈 Make sure this path is correct
 
-function Login({ onSwitch }) {
+function Login({ onLogin, onSwitch }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    alert(`Logging in with ${email}`);
-    // Add real login logic here
+    if (onLogin) {
+      onLogin(email, password);
+    }
   };
 
   return (
-    <div>
+    <div className="login-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <input 
@@ -19,20 +21,20 @@ function Login({ onSwitch }) {
           placeholder="Email" 
           value={email} 
           onChange={e => setEmail(e.target.value)} 
-          required
+          required 
         />
         <input 
           type="password" 
           placeholder="Password" 
           value={password} 
           onChange={e => setPassword(e.target.value)} 
-          required
+          required 
         />
         <button type="submit">Login</button>
       </form>
       <p>
-        Don't have an account?{' '}
-        <button onClick={() => onSwitch('signup')}>Sign Up</button>
+        Don’t have an account?{' '}
+        <button onClick={onSwitch}>Sign Up</button>
       </p>
     </div>
   );

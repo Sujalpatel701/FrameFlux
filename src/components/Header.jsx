@@ -8,17 +8,17 @@ function Header({ toggleTheme, darkMode }) {
   const location = useLocation();
 
   const handleUserClick = () => {
-    navigate('/FrameFlux/user');
+    navigate('/user');
   };
 
   // Hide both WallpaperTypes and theme toggle on user page
-  const isUserPage = location.pathname === '/FrameFlux/user';
+  const isUserPage = location.pathname === '/user';
 
   return (
     <header className="header">
       <div className="header-top">
         <h1 className="logo">
-          <Link to="/FrameFlux/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
             FrameFlux
           </Link>
         </h1>

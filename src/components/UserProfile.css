@@ -1,0 +1,112 @@
+.profile-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--bg-secondary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: var(--text-primary);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.profile-image {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--button-bg);
+  box-shadow: 0 4px 8px var(--button-bg);
+}
+
+.upload-section {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-primary);
+}
+
+.upload-section p {
+  font-weight: 600;
+}
+
+.upload-section input[type="file"] {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-section input[type="file"]:hover {
+  border-color: var(--button-bg);
+}
+
+.upload-btn {
+  padding: 10px 16px;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 200px;
+}
+
+.upload-btn:hover {
+  background-color: var(--button-hover-bg);
+}
+
+.logout-btn {
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #e74c3c; /* red color for logout is fine, but can also be variable */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 200px;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-image {
+    margin-bottom: 20px;
+    width: 130px;
+    height: 130px;
+  }
+}
