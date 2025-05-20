@@ -14,6 +14,7 @@ function WallpaperTypes() {
       <button>Art</button>
       <button>Cars</button>
       <button>Anime</button>
+      <button>Game</button>
     </div>
   );
 }

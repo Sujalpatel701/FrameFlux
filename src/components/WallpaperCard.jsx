@@ -1,10 +1,10 @@
 import React from 'react';
 
-function WallpaperCard() {
+function WallpaperCard({ imageUrl }) {
   return (
     <div className="wallpaper-card">
       <img
-        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+        src={imageUrl}
         alt="Wallpaper"
         style={{
           width: '100%',

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import User from './pages/User';
+import AddWallpaper from './pages/AddWallpaper'; // ✅ Import AddWallpaper
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home toggleTheme={toggleTheme} darkMode={darkMode} />} />
         <Route path="/user" element={<User />} />
+        <Route path="/AddWallpaper" element={<AddWallpaper />} /> {/* ✅ New Route */}
       </Routes>
     </div>
   );

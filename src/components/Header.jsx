@@ -11,8 +11,9 @@ function Header({ toggleTheme, darkMode }) {
     navigate('/user');
   };
 
-  // Hide both WallpaperTypes and theme toggle on user page
-  const isUserPage = location.pathname === '/user';
+const hiddenHeaderPaths = ['/user', '/AddWallpaper'];
+const isUserPage = hiddenHeaderPaths.includes(location.pathname);
+
 
   return (
     <header className="header">
@@ -23,13 +24,16 @@ function Header({ toggleTheme, darkMode }) {
           </Link>
         </h1>
         <div className="actions">
-          {!isUserPage && (
-            <button onClick={toggleTheme}>
-              {darkMode ? '☀️ Light' : '🌙 Dark'}
-            </button>
-          )}
-          <button className="user-btn" onClick={handleUserClick}>👤</button>
-        </div>
+  {!isUserPage && (
+    <>
+      <button onClick={toggleTheme}>
+        {darkMode ? '☀️ Light' : '🌙 Dark'}
+      </button>
+      <button className="user-btn" onClick={handleUserClick}>👤</button>
+    </>
+  )}
+</div>
+
       </div>
 
       {!isUserPage && <WallpaperTypes />}

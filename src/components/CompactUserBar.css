@@ -1,0 +1,40 @@
+.compact-user-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.compact-profile-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+  border: 2px solid var(--border-color);
+}
+
+.compact-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.compact-username {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.compact-email {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  opacity: 0.7;
+  margin: 0;
+}
