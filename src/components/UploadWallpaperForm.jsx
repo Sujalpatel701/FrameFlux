@@ -58,6 +58,11 @@ function UploadWallpaperForm() {
         setFileName('');
         setType('Nature');
         setDescription('');
+
+        // Refresh the page after 0.5s to show updated list
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else {
         alert(data.message || 'Failed to upload wallpaper.');
       }
@@ -79,7 +84,6 @@ function UploadWallpaperForm() {
         required
       />
 
-      {/* Hidden file input */}
       <input
         type="file"
         id="image-upload"
@@ -89,12 +93,10 @@ function UploadWallpaperForm() {
         style={{ display: 'none' }}
       />
 
-      {/* Custom label styled as button */}
       <label htmlFor="image-upload" className="file-upload-label">
         {fileName || "Choose Image File"}
       </label>
 
-      {/* Display selected file name */}
       {fileName && <div className="file-upload-name">{fileName}</div>}
 
       <select value={type} onChange={(e) => setType(e.target.value)} required>

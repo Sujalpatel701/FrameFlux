@@ -28,7 +28,12 @@ function WallpaperGrid({ onAddWallpaper }) {
     <div className="wallpaper-grid-container">
       <div className="wallpaper-grid">
         {wallpapers.map((wallpaper) => (
-          <WallpaperCard key={wallpaper._id} imageUrl={`${import.meta.env.VITE_API_BASE_URL}/uploads/${wallpaper.imageName}`} />
+          <WallpaperCard
+  key={wallpaper._id}
+  id={wallpaper._id}
+  imageUrl={`${import.meta.env.VITE_API_BASE_URL}/uploads/${wallpaper.imageName}`}
+/>
+
         ))}
       </div>
       <AddWallpaperButton onClick={onAddWallpaper} />

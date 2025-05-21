@@ -5,6 +5,8 @@ import User from './pages/User';
 import AddWallpaper from './pages/AddWallpaper'; // ✅ Import AddWallpaper
 import './App.css';
 
+import ViewWallpaper from './pages/ViewWallpaper'; // ✅ Import ViewWallpaper
+
 function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('darkMode') === 'true');
 
@@ -19,7 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home toggleTheme={toggleTheme} darkMode={darkMode} />} />
         <Route path="/user" element={<User />} />
-        <Route path="/AddWallpaper" element={<AddWallpaper />} /> {/* ✅ New Route */}
+        <Route path="/AddWallpaper" element={<AddWallpaper />} />
+        <Route path="/wallpaper/:id" element={<ViewWallpaper />} /> {/* ✅ New route */}
       </Routes>
     </div>
   );

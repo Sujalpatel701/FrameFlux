@@ -11,9 +11,11 @@ function Header({ toggleTheme, darkMode }) {
     navigate('/user');
   };
 
-const hiddenHeaderPaths = ['/user', '/AddWallpaper'];
-const isUserPage = hiddenHeaderPaths.includes(location.pathname);
-
+  // Add logic to hide on specific paths including dynamic wallpaper detail page
+  const isHiddenPage =
+    location.pathname === '/user' ||
+    location.pathname === '/AddWallpaper' ||
+    location.pathname.startsWith('/wallpaper/'); // ✅ dynamic route check
 
   return (
     <header className="header">
@@ -24,19 +26,18 @@ const isUserPage = hiddenHeaderPaths.includes(location.pathname);
           </Link>
         </h1>
         <div className="actions">
-  {!isUserPage && (
-    <>
-      <button onClick={toggleTheme}>
-        {darkMode ? '☀️ Light' : '🌙 Dark'}
-      </button>
-      <button className="user-btn" onClick={handleUserClick}>👤</button>
-    </>
-  )}
-</div>
-
+          {!isHiddenPage && (
+            <>
+              <button onClick={toggleTheme}>
+                {darkMode ? '☀️ Light' : '🌙 Dark'}
+              </button>
+              <button className="user-btn" onClick={handleUserClick}>👤</button>
+            </>
+          )}
+        </div>
       </div>
 
-      {!isUserPage && <WallpaperTypes />}
+      {!isHiddenPage && <WallpaperTypes />}
     </header>
   );
 }

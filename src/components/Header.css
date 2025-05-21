@@ -149,11 +149,42 @@
   background-color: var(--button-hover-bg);
 }
 
-/* Responsive layout */
-@media (min-width: 600px) {
+@media (max-width: 400px) {
+  .header {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .actions button {
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+
+  .user-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
   .header-controls {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    gap: 8px;
+  }
+
+  .wallpaper-types {
+    gap: 6px;
+  }
+
+  .wallpaper-types button {
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 5px;
   }
 }

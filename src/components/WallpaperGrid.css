@@ -4,10 +4,36 @@
 }
 
 .wallpaper-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
-  gap: 16px;
+  column-count: 4;
+  column-gap: 16px;
+  padding: 0 16px;
 }
+
+/* Each card will break correctly in masonry layout */
+.wallpaper-card {
+  break-inside: avoid;
+  margin-bottom: 16px;
+}
+
+/* Responsive columns */
+@media (max-width: 1200px) {
+  .wallpaper-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 900px) {
+  .wallpaper-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .wallpaper-grid {
+    column-count: 1;
+  }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 900px) {

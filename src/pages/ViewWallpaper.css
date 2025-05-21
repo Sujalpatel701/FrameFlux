@@ -1,0 +1,19 @@
+.view-wallpaper {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.view-wallpaper-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+}
+
+.view-wallpaper h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}

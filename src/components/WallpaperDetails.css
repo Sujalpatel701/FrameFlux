@@ -1,0 +1,62 @@
+.wallpaper-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 22px;
+  box-sizing: border-box;
+  color: var(--text-primary);
+}
+
+@media (min-width: 400px) {
+  .wallpaper-detail-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.wallpaper-preview {
+  flex: 1;
+  text-align: center;
+}
+
+.wallpaper-detail-img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.wallpaper-info {
+  flex: 1;
+  background-color: var(--bg-secondary);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wallpaper-info h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.wallpaper-info p {
+  margin: 12px 0;
+  font-size: 16px;
+}
+
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--button-hover-bg);
+}
