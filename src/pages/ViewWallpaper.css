@@ -1,7 +1,18 @@
+/* src/pages/ViewWallpaper.css */
+.view-wallpaper-wrapper {
+  max-width: 960px;
+  margin: 32px auto 64px;
+  padding: 24px;
+  background-color: var(--bg);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+
 .view-wallpaper {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
   text-align: center;
 }
 
@@ -14,6 +25,29 @@
 }
 
 .view-wallpaper h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.view-wallpaper p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Responsive tweaks */
+@media (max-width: 400px) {
+  .view-wallpaper-wrapper {
+    margin: 15px 8px 30px;
+    padding: 12px;
+  }
+
+  .view-wallpaper h2 {
+    font-size: 20px;
+  }
+
+  .view-wallpaper p {
+    font-size: 14px;
+  }
 }

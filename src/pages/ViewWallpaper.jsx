@@ -1,7 +1,10 @@
+// src/pages/ViewWallpaper.jsx
+
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import WallpaperDetails from '../components/WallpaperDetails';
-import Header from '../components/Header'; // ✅ Import Header
+import Header from '../components/Header';
+import CommentsSection from '../components/CommentsSection';
 import './ViewWallpaper.css';
 
 function ViewWallpaper({ toggleTheme, darkMode }) {
@@ -14,12 +17,14 @@ function ViewWallpaper({ toggleTheme, darkMode }) {
     const fetchWallpaper = async () => {
       try {
         const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/wallpapers/${id}`);
-        const data = await response.json();
-        if (response.ok) {
-          setWallpaper(data);
-        } else {
-          setError(data.message || "Failed to load wallpaper");
+        
+        if (!response.ok) {
+          const errorData = await response.text();
+          throw new Error(errorData || "Failed to fetch wallpaper");
         }
+
+        const data = await response.json();
+        setWallpaper(data);
       } catch (err) {
         setError(err.message || "Error fetching wallpaper");
       } finally {
@@ -37,7 +42,10 @@ function ViewWallpaper({ toggleTheme, darkMode }) {
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error}</p>}
         {!loading && !error && wallpaper && (
-          <WallpaperDetails wallpaper={wallpaper} />
+          <>
+            <WallpaperDetails wallpaper={wallpaper} />
+            <CommentsSection wallpaperId={wallpaper._id} />
+          </>
         )}
       </div>
     </div>
