@@ -1,20 +1,20 @@
+// src/components/WallpaperTypes.jsx
 import React from 'react';
 import './WallpaperTypes.css';
 
-function WallpaperTypes() {
+function WallpaperTypes({ onSelectType }) {
+  const types = [
+    'Nature', 'Abstract', 'Animals', 'Space',
+    'Architecture', 'Technology', 'Minimalist',
+    'Art', 'Cars', 'Anime', 'Game'
+  ];
+
   return (
     <div className="wallpaper-types">
-      <button>Nature</button>
-      <button>Abstract</button>
-      <button>Animals</button>
-      <button>Space</button>
-      <button>Architecture</button>
-      <button>Technology</button>
-      <button>Minimalist</button>
-      <button>Art</button>
-      <button>Cars</button>
-      <button>Anime</button>
-      <button>Game</button>
+      <button onClick={() => onSelectType('')}>All</button>
+      {types.map((type) => (
+        <button key={type} onClick={() => onSelectType(type)}>{type}</button>
+      ))}
     </div>
   );
 }

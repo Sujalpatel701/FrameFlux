@@ -1,4 +1,6 @@
+// src/components/Footer.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -6,9 +8,7 @@ function Footer() {
     <footer className="footer">
       <p>© {new Date().getFullYear()} FrameFlux. All rights reserved.</p>
       <div className="footer-links">
-        <a href="/about">About</a>
-        <a href="/terms">Terms</a>
-        <a href="/privacy">Privacy</a>
+        <Link to="/about">About</Link>
       </div>
     </footer>
   );

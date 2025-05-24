@@ -1,0 +1,42 @@
+.user-wallpapers {
+  margin-top: 2rem;
+}
+
+.user-wallpapers h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.user-wallpapers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.user-wallpaper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wallpaper-card.small img {
+  width: 160px;
+  height: auto;
+  border-radius: 12px;
+}
+
+.delete-btn {
+  margin-top: 8px;
+  background-color: var(--button-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: var(--button-hover-bg);
+}

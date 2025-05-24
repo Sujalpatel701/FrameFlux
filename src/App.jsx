@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import User from './pages/User';
 import AddWallpaper from './pages/AddWallpaper'; // ✅ Import AddWallpaper
 import './App.css';
-
+import About from './pages/About';
 import ViewWallpaper from './pages/ViewWallpaper'; // ✅ Import ViewWallpaper
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
         <Route path="/user" element={<User />} />
         <Route path="/AddWallpaper" element={<AddWallpaper />} />
         <Route path="/wallpaper/:id" element={<ViewWallpaper />} /> {/* ✅ New route */}
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );

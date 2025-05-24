@@ -3,11 +3,12 @@ import Header from '../components/Header';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 import UserProfile from '../components/UserProfile';
+import UserWallpapers from '../components/UserWallpapers'; // ✅ Import
 
 function User() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
-  const [activeView, setActiveView] = useState('login'); // 'login' | 'signup' | 'profile'
+  const [activeView, setActiveView] = useState('login');
 
   useEffect(() => {
     const storedEmail = localStorage.getItem('userEmail');
@@ -74,7 +75,12 @@ function User() {
       <div style={{ padding: '2rem' }}>
         {activeView === 'login' && <Login onLogin={handleLogin} onSwitch={() => setActiveView('signup')} />}
         {activeView === 'signup' && <SignUp onSignUp={handleSignUp} onSwitch={() => setActiveView('login')} />}
-        {activeView === 'profile' && <UserProfile userEmail={userEmail} onLogout={handleLogout} />}
+        {activeView === 'profile' && isLoggedIn && (
+          <>
+            <UserProfile userEmail={userEmail} onLogout={handleLogout} />
+            <UserWallpapers email={userEmail} /> {/* ✅ Only shows when logged in */}
+          </>
+        )}
       </div>
     </>
   );

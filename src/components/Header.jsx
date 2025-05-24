@@ -1,9 +1,10 @@
+// src/components/Header.jsx
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import WallpaperTypes from './WallpaperTypes';
 import './Header.css';
 
-function Header({ toggleTheme, darkMode }) {
+function Header({ toggleTheme, darkMode, onSelectType }) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -11,11 +12,11 @@ function Header({ toggleTheme, darkMode }) {
     navigate('/user');
   };
 
-  // Add logic to hide on specific paths including dynamic wallpaper detail page
   const isHiddenPage =
     location.pathname === '/user' ||
     location.pathname === '/AddWallpaper' ||
-    location.pathname.startsWith('/wallpaper/'); // ✅ dynamic route check
+    location.pathname === '/about' ||
+    location.pathname.startsWith('/wallpaper/');
 
   return (
     <header className="header">
@@ -37,7 +38,7 @@ function Header({ toggleTheme, darkMode }) {
         </div>
       </div>
 
-      {!isHiddenPage && <WallpaperTypes />}
+      {!isHiddenPage && <WallpaperTypes onSelectType={onSelectType} />}
     </header>
   );
 }
